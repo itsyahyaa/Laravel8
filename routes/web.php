@@ -10,6 +10,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\uploadcontroller;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PostoperationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,3 +84,13 @@ Route::post('/upload',[uploadcontroller::class, 'uploadfile'])->name('upload.fil
 Route::get('/send-email',[MailController::class, 'sendEmail']);
 
 Route::get('/students',[StudentController::class, 'fetchStudents']);
+
+// Eloquent Crud Operation
+Route::get('/add-operation',[PostoperationController::class, 'add']);
+Route::post('/create-operation',[PostoperationController::class, 'addpost'])->name('add.operation');
+Route::get('/getpost',[PostoperationController::class, 'getpost'])->name('get.post');
+Route::get('/getpost/{id}',[PostoperationController::class, 'getpostbyid'])->name('get.postbyid');
+Route::get('/editpost/{id}',[PostoperationController::class, 'editpost'])->name('get.editpost');
+Route::post('/updatepost',[PostoperationController::class, 'updatepost'])->name('updated.post');
+Route::get('/delete/{id}',[PostoperationController::class, 'deletepost'])->name('delete.post');
+
