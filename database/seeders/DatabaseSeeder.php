@@ -17,9 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         $faker = Faker::create();
         foreach(range(1,1000) as $index){
-            DB::table('posts')->insert([
-                'title'=> $faker->name,
-                'body'=> $faker->body
+            DB::table('students')->insert([
+                'name'=> $faker->name,
+                'email'=> $faker->email,
+                'phone'=> $faker->phoneNumber
             ]);
         }
 

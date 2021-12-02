@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\uploadcontroller;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,3 +81,5 @@ Route::post('/upload',[uploadcontroller::class, 'uploadfile'])->name('upload.fil
 
 // mail
 Route::get('/send-email',[MailController::class, 'sendEmail']);
+
+Route::get('/students',[StudentController::class, 'fetchStudents']);
