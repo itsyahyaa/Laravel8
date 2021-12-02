@@ -8,6 +8,7 @@ use App\Http\Controllers\Fluentcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\uploadcontroller;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,6 @@ Route::get('/contact',function(){
 
 Route::get('/upload',[uploadcontroller::class, 'uploadform'])->name('upload.form');
 Route::post('/upload',[uploadcontroller::class, 'uploadfile'])->name('upload.file');
+
+// mail
+Route::get('/send-email',[MailController::class, 'sendEmail']);
