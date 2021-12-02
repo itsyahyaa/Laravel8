@@ -7,6 +7,7 @@ use App\Http\Controllers\Clientcontroller;
 use App\Http\Controllers\Fluentcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\uploadcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +73,6 @@ Route::get('/about',function(){
 Route::get('/contact',function(){
     return view('contact');
 });
+
+Route::get('/upload',[uploadcontroller::class, 'uploadform'])->name('upload.form');
+Route::post('/upload',[uploadcontroller::class, 'uploadfile'])->name('upload.file');
