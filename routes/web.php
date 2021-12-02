@@ -59,3 +59,16 @@ Route::get('/edit/{id}',[PostController::class,'editpost'])->name('post.editpost
 Route::post('/update-post',[PostController::class,'updatepost'])->name('post.updatepost');
 
 Route::get('/join',[PostController::class,'innerJoinClause'])->name('post.Join');
+
+
+Route::get('/index',function(){
+    return view('index');
+});
+
+Route::get('/about',function(){
+    return view('about');
+});
+
+Route::get('/contact',function(){
+    return view('contact');
+});
