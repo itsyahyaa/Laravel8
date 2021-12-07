@@ -46,6 +46,7 @@ class PostoperationController extends Controller
     }
     public function deletepost($id){
         Postoperation::where('id',$id)->delete();
+        Postoperation::where('id',$id)->delete();
         return back()->with('post_deleted','Post has been deleted successfully');
     }
 
